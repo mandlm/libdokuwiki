@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
 
-find_package(XMLRPC REQUIRED c++2 client)
-
 project(DokuWiki LANGUAGES CXX)
+
+find_package(XMLRPC REQUIRED c++2 client)
 
 set(dokuwiki_headers
 	include/dokuwiki.h
