@@ -25,6 +25,10 @@ class DokuWiki
 		std::string getWikiTitle();
 		PageInfo getPageInfo(const std::string &pageName);
 
+		bool pageExists(const std::string &pageName);
+		void putPage(const std::string &pageName, const std::string &content);
+		void addPage(const std::string &pageName, const std::string &content);
+
 	private:
 		class impl;
 		std::unique_ptr<impl> pimpl;

@@ -36,3 +36,19 @@ DokuWiki::PageInfo DokuWiki::getPageInfo(const std::string &pageName)
 {
 	return pimpl->getPageInfo(pageName);
 }
+
+bool DokuWiki::pageExists(const std::string &pageName)
+{
+	return pimpl->pageExists(pageName);
+}
+
+void DokuWiki::putPage(const std::string &pageName, const std::string &content)
+{
+	pimpl->putPage(pageName, content);
+}
+
+void DokuWiki::addPage(const std::string &pageName, const std::string &content)
+{
+	pimpl->addPage(pageName, content);
+}
+

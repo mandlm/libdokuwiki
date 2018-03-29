@@ -23,9 +23,14 @@ class DokuWiki::impl
 		std::string getWikiTitle();
 
 		DokuWiki::PageInfo getPageInfo(const std::string &pageName);
-	
+
+		bool pageExists(const std::string &pageName);
+		void putPage(const std::string &pageName, const std::string &content);
+		void addPage(const std::string &pageName, const std::string &content);
+
 		template <typename ReturnType>
 		ReturnType executeCommand(const std::string &command, 
-				const std::list<std::string> &params = {});
+				const std::list<std::string> &params = {},
+				const std::map<std::string, xmlrpc_c::value> &attributes = {});
 };
 
