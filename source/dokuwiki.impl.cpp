@@ -180,3 +180,13 @@ void DokuWiki::impl::addPage(const std::string &pageName, const std::string &con
 	putPage(pageName, content);
 }
 
+void DokuWiki::impl::appendToPage(const std::string &pageName, const std::string &content)
+{
+	if (!executeCommand<bool>("dokuwiki.appendPage", { pageName, content }, 
+				{{ "sum", xmlrpc_c::value_string("Added automatically") },
+				{"minor", xmlrpc_c::value_boolean(false) }}))
+	{
+		throw std::runtime_error("failed to append to page");
+	}
+}
+

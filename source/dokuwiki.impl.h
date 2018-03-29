@@ -28,6 +28,8 @@ class DokuWiki::impl
 		void putPage(const std::string &pageName, const std::string &content);
 		void addPage(const std::string &pageName, const std::string &content);
 
+		void appendToPage(const std::string &pageName, const std::string &content);
+
 		template <typename ReturnType>
 		ReturnType executeCommand(const std::string &command, 
 				const std::list<std::string> &params = {},

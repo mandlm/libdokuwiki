@@ -29,6 +29,8 @@ class DokuWiki
 		void putPage(const std::string &pageName, const std::string &content);
 		void addPage(const std::string &pageName, const std::string &content);
 
+		void appendToPage(const std::string &pageName, const std::string &content);
+
 	private:
 		class impl;
 		std::unique_ptr<impl> pimpl;

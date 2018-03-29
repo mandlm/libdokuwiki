@@ -52,3 +52,7 @@ void DokuWiki::addPage(const std::string &pageName, const std::string &content)
 	pimpl->addPage(pageName, content);
 }
 
+void DokuWiki::appendToPage(const std::string &pageName, const std::string &content)
+{
+	pimpl->appendToPage(pageName, content);
+}
