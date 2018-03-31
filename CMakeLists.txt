@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.6)
 
 project(DokuWiki LANGUAGES CXX)
 
@@ -19,16 +19,15 @@ add_library(${PROJECT_NAME}
 	${dokuwiki_sources}
 )
 
+set_target_properties(${PROJECT_NAME}
+	PROPERTIES CXX_STANDARD 14
+)
+
 target_include_directories(${PROJECT_NAME} 
 	PUBLIC
 		include
 	PRIVATE
 		${XMLRPC_INCLUDE_DIRS}
-)
-
-target_compile_features(${PROJECT_NAME} 
-	PUBLIC 
-		cxx_std_17
 )
 
 target_link_libraries(${PROJECT_NAME} 
