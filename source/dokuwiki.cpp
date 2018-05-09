@@ -5,7 +5,8 @@
 
 #include <iostream>
 
-DokuWiki::DokuWiki(const std::string &url, const std::string &username, const std::string &password)
+DokuWiki::DokuWiki(const std::string &url, const std::string &username,
+	const std::string &password)
 	: pimpl{std::make_unique<impl>(url, username, password)}
 {
 }
@@ -52,7 +53,8 @@ void DokuWiki::addPage(const std::string &pageName, const std::string &content)
 	pimpl->addPage(pageName, content);
 }
 
-void DokuWiki::appendToPage(const std::string &pageName, const std::string &content)
+void DokuWiki::appendToPage(
+	const std::string &pageName, const std::string &content)
 {
 	pimpl->appendToPage(pageName, content);
 }
